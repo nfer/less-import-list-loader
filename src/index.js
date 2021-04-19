@@ -20,7 +20,7 @@ export default function jsonImportLoader(content) {
     prefix,
   } = options;
 
-  const importMatcher = new RegExp(`^\\s*@${prefix} "(.*?)";(.*)`);
+  const importMatcher = new RegExp(`^\\s*@${prefix} ["'](.*?)["'];(.*)`);
 
   const contents = content.split('\n');
   const lessPath = this.resourcePath;
