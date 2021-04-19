@@ -1,0 +1,65 @@
+{
+  "name": "less-import-list-loader",
+  "version": "0.0.1",
+  "description": "load list from json to Less",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "babel src --out-dir dist --ignore /__tests__/",
+    "lint": "eslint --ignore-path .gitignore src",
+    "test": "nyc --reporter=lcov --reporter=text ava",
+    "prepublishOnly": "npm run lint && npm run test && npm run build",
+    "ci": "nyc report --reporter=text-lcov | coveralls"
+  },
+  "ava": {
+    "files": [
+      "src/__tests__/**/*.js"
+    ],
+    "concurrency": 5,
+    "require": "babel-register",
+    "babel": "inherit"
+  },
+  "nyc": {
+    "exclude": [
+      "node_modules",
+      "**/__tests__",
+      "**/dist"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nferzhuang/less-import-list-loader.git"
+  },
+  "keywords": [
+    "webpack-loader",
+    "less",
+    "json",
+    "import"
+  ],
+  "author": "Nfer Zhuang <nferzhuang@tencent.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nferzhuang/less-import-list-loader/issues"
+  },
+  "homepage": "https://github.com/nferzhuang/less-import-list-loader#readme",
+  "devDependencies": {
+    "ava": "^0.25.0",
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^10.1.0",
+    "babel-plugin-add-module-exports": "^1.0.4",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "coveralls": "^3.1.0",
+    "eslint": "^7.24.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "nyc": "^15.1.0"
+  },
+  "files": [
+    "dist/",
+    "options.json"
+  ],
+  "dependencies": {
+    "loader-utils": "^2.0.0"
+  }
+}
