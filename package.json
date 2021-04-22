@@ -1,6 +1,6 @@
 {
   "name": "less-import-list-loader",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "load list from json to Less",
   "main": "dist/index.js",
   "scripts": {
