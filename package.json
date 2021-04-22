@@ -33,6 +33,7 @@
     "webpack-loader",
     "less",
     "json",
+    "list",
     "import"
   ],
   "author": "Nfer Zhuang <nferzhuang@tencent.com>",
@@ -40,7 +41,7 @@
   "bugs": {
     "url": "https://github.com/nfer/less-import-list-loader/issues"
   },
-  "homepage": "https://github.com/nfer/less-import-list-loader#readme",
+  "homepage": "https://github.com/nfer/less-import-list-loader",
   "devDependencies": {
     "ava": "^0.25.0",
     "babel-cli": "^6.26.0",
