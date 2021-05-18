@@ -56,7 +56,7 @@ export default function jsonImportLoader(content) {
       } else if (childType === 'object' && !Array.isArray(jsonContent[0])) {
         Object.keys(jsonContent[0]).forEach((key) => {
           lessContent.push(`@list-${key}: `);
-          lessContent.push(jsonContent.map((item) => item[key]).join(','));
+          lessContent.push(jsonContent.map((item) => String(item[key]).replace(/'/g, '\\\'')).join(','));
           lessContent.push(';\n');
         });
       } else {

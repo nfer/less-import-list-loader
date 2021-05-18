@@ -103,3 +103,11 @@ test('without data', (t) => {
   const expect = '@list: a1,b1,c1;\n';
   t.deepEqual(result, expect);
 });
+
+test('object array data has single quote', (t) => {
+  const resourcePath = join(fixturesPath, 'test.less');
+  const content = '@json-import-list "object_array_single_quote.json";background:#fff;';
+  const result = run(resourcePath, false, content);
+  const expect = '@list-a: \\\',a2;\n@list-b: b1,b2;\n@list-c: c1,c2;\nbackground:#fff;';
+  t.deepEqual(result, expect);
+});
